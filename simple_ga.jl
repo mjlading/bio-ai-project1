@@ -1,17 +1,18 @@
 using Statistics
 
-# Decodes a genome to the corresponding phenome
+# Decodes a binary genome to the corresponding decimal phenome
 function decode(genome::Vector{Int})
     return foldl((acc, bit) -> acc * 2 + bit, genome, init=0)
 end
 
+# TODO Markus
 function fitness(phenome::Int)
     return phenome^2
 end
 
 # Individuals are static
 struct Individual
-    genome::Vector{Int} # TODO can be optimized into Vector{Bool} or BitArray
+    genome::Vector{Int}
     phenome::Int
     fitness::Int
 

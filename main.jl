@@ -2,7 +2,7 @@ include("simple_ga.jl")
 
 using Plots
 
-const GENOME_LENGTH = 5
+GENOME_LENGTH = 5
 POPULATION_SIZE = 100
 MUTATION_RATE = 1 / (GENOME_LENGTH * 3)
 CROSSOVER_RATE = 0.8 #TODO
@@ -32,7 +32,7 @@ for generation in 1:N_GENERATIONS
     replace_generation!(population, post_mutation_offspring)
 end
 
-println.(population.individuals)
+# println.(population.individuals)
 
 best_individual = get_best_individual(population)
 @show best_individual
