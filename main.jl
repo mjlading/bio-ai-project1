@@ -8,7 +8,6 @@ MUTATION_RATE = 1 / (GENOME_LENGTH * 3)
 CROSSOVER_RATE = 0.8 #TODO
 N_GENERATIONS = 100
 
-# println("Generating random population")
 population = generate_random_population(POPULATION_SIZE)
 # println.(population.individuals)
 
@@ -17,7 +16,6 @@ entropy_history = []
 
 # Main evolution cycle
 for generation in 1:N_GENERATIONS
-
     # println("\nGeneration $generation")
 
     parents = select_parents_roulette(population)
@@ -37,7 +35,6 @@ end
 best_individual = get_best_individual(population)
 @show best_individual
 
-@show length(fitness_history)
 plot(1:N_GENERATIONS, fitness_history, xlabel="Generation", ylabel="Avg. fitness", title="Fitness over generations")
 
 entropy_scaled = entropy_history .* (maximum(fitness_history) / maximum(entropy_history))

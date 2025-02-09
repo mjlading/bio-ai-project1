@@ -125,7 +125,6 @@ function shannon_entropy(individuals::Vector{Individual})
     bit_entropies = []
 
     for genome_index in 1:GENOME_LENGTH
-        #TODO optimize by counting only 0s?
         p0 = count(g[genome_index] == 0 for g in genomes) / l
         p1 = 1 - p0
 
