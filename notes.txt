@@ -1,0 +1,5 @@
+
+Ideas for better performance:
+- make individuals mutable and do variation operators in-place instead of creating new individuals.
+- use BitArray for genome
+- binary search for roulette
